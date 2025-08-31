@@ -241,6 +241,8 @@
         .media-item img {
             max-width: 100%;
             border-radius: var(--border-radius);
+            height: 200px;
+            object-fit: cover;
         }
         
         .media-caption {
@@ -467,7 +469,7 @@
     </div>
     
     <div class="container">
-        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" alt="DNA Editing with CRISPR" class="featured-image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/DNA_Repair_after_CRISPR-Cas9_cut.svg" alt="DNA Editing with CRISPR" class="featured-image">
         
         <div class="main-content">
             <article>
@@ -482,12 +484,12 @@
                 
                 <div class="media-container">
                     <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1559476264-9a20d8be5be0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Normal vs Trisomy 21 Chromosomes">
-                        <p class="media-caption">Comparison of normal chromosomes and Trisomy 21</p>
+                        <img src="IMAGES/1.jpg" alt="Normal vs Trisomy 21 Chromosomes">
+                        <p class="media-caption">Comparison of normal and Trisomy 21 chromosomes</p>
                     </div>
                     <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1563213126-1dbdf5f4eebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="How CRISPR-Cas9 works">
-                        <p class="media-caption">Diagram of CRISPR-Cas9 gene editing process</p>
+                        <img src="IMAGES/2.jpg">
+                        <p class="media-caption">Diagram of chromosome karyotype with Trisomy 21</p>
                     </div>
                 </div>
                 
@@ -620,13 +622,15 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-                
-                // Update URL
-                history.pushState(null, null, targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL
+                    history.pushState(null, null, targetId);
+                }
             });
         });
     </script>
